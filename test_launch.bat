@@ -1,0 +1,1 @@
+echo 'Hello from winotify' > test_launch_output.txt

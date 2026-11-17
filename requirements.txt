@@ -1,0 +1,13 @@
+# Core Email & IMAP Processing
+imap-tools>=1.5.0
+
+# AI Intelligence & Summarization (GPT-4o via g4f)
+g4f>=0.3.0
+
+# Windows 10 / 11 Native Toast Notifications with Action Buttons
+winotify>=1.1.0
+
+# Neural Text-to-Speech & Audio Playback
+edge-tts>=6.1.0
+pygame>=2.5.0
+
