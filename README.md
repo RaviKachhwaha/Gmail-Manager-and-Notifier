@@ -14,26 +14,6 @@ A lightweight Windows background tool that watches your primary Gmail inbox, pop
 - **Auto-Start Support**: Includes scripts to add or remove the assistant from Windows Startup.
 - **CSV Mail Sender**: Comes with `Gmail.py` to quickly send emails to contacts saved in a CSV file.
 
-## Project Structure
-
-```text
-Gmail-Manager-and-Notifier/
-├── Alert.py                  # Builds Windows toast notifications
-├── ai_processor.py           # Handles AI summarization prompts
-├── animation_For_Alert2.gif  # Notification icon
-├── contacts.csv.example      # Template for CSV contacts
-├── disable_startup.py        # Removes app from Windows Startup
-├── email_monitor.py          # Fetches unread emails via IMAP
-├── Gmail.py                  # Sends emails to CSV contacts via SMTP
-├── main_service.py           # Main background loop and local action server
-├── requirements.txt          # Python dependencies
-├── setup_startup.py          # Adds silent background run to Windows Startup
-├── test_imap.py              # Tests Gmail IMAP login
-├── test_system.py            # Runs a mock alert and voice test
-├── voice_tts.py              # Generates and plays Edge TTS audio
-└── .gitignore                # Excludes logs, cache, and sensitive files
-```
-
 ## Requirements:-
 Windows 10 or 11
 
@@ -50,35 +30,47 @@ Search for App passwords, create one named Gmail Assistant, and copy the 16-char
 In Gmail web settings, go to See all settings > Forwarding and POP/IMAP, select Enable IMAP, and save changes.
 
 2. Install Dependencies
-Bash
+```Bash
 git clone [https://github.com/RaviKachhwaha/Gmail-Manager-and-Notifier](https://github.com/RaviKachhwaha/Gmail-Manager-and-Notifier)
 cd Gmail-Manager-and-Notifier
 python -m venv venv
 .\venv\Scripts\Activate.ps1
 pip install -r requirements.txt
+```
+
 3. Add Your Credentials
 Open email_monitor.py, Gmail.py, and test_imap.py, and add your email and App Password:
 
-Python
+```Python
 GMAIL_USER = "your_email@gmail.com"
 GMAIL_PASS = "xxxx xxxx xxxx xxxx"
+```
 (Optional) Copy contacts.csv.example to contacts.csv if you want to use the CSV email sender:
 
-PowerShell
+```PowerShell
 Copy-Item contacts.csv.example contacts.csv
-Usage
+```
+
+## Usage
+
 Test notifications and voice:
 
-Bash
+```Bash
 python test_system.py
+```
+
 Run in the foreground (with console logs):
 
-Bash
+```Bash
 python main_service.py
+```
+
 Run silently in the background:
 
-Bash
+```Bash
 pythonw main_service.py
+```
+
 (Logs are saved to gmail_assistant.log.)
 
 Manage Windows Startup:
@@ -89,8 +81,10 @@ Disable: python disable_startup.py
 
 Send an email via CSV:
 
-Bash
+```Bash
 python Gmail.py
+```
+
 Customization
 Change the voice: Edit VOICE in voice_tts.py (default is en-IN-PrabhatNeural; other options include en-US-ChristopherNeural, en-GB-RyanNeural, or en-US-AriaNeural).
 
