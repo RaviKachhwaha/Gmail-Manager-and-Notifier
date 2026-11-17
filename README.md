@@ -92,7 +92,7 @@ Adjust check intervals: Change CHECK_INTERVAL_SECONDS (default 30) and REMINDER_
 
 Change alert icon: Replace animation_For_Alert2.gif with your own .gif or .png.
 
-Troubleshooting
+## Troubleshooting
 Authentication failed: Make sure you are using your 16-character App Password, not your regular Gmail password.
 
 No notifications showing: Check that Windows Focus Assist / Do Not Disturb is turned off.
